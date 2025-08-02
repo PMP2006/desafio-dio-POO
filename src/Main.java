@@ -21,8 +21,40 @@ public class Main {
         mentoria1.setDescricao("Descrição da Mentoria Java");
         mentoria1.setData(LocalDate.now());
 
-        System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria1);
+        Bootcamp bootcamp1 = new Bootcamp();
+        bootcamp1.setNome("Bootcamp Desenvolvedor Java");
+        bootcamp1.setDescricao("Descrição do Bootcamp Desenvolvedor Java");
+        bootcamp1.getConteudos().add(curso1);
+        bootcamp1.getConteudos().add(curso2);
+        bootcamp1.getConteudos().add(mentoria1);
+
+
+        System.out.println("=====DEV1=====");
+        Dev devpedro = new Dev();
+        devpedro.setNome("Pedro");
+        devpedro.inscreverBootcamp(bootcamp1);
+        System.out.printf("Conteúdos Inscritos Pedro: %s\n", devpedro.getConteudosInscritos());
+        devpedro.progredir();
+
+        System.out.println("-");
+
+        System.out.printf("Conteúdos Concluídos Pedro: %s\n", devpedro.getConteudosConcluidos());
+        System.out.printf("Conteúdos Inscritos Pedro: %s\n", devpedro.getConteudosInscritos());
+
+        System.out.println();
+
+        System.out.println("=====DEV2=====");
+        Dev devgabriel = new Dev();
+        devgabriel.setNome("Gabriel");
+        devgabriel.inscreverBootcamp(bootcamp1);
+        System.out.printf("Conteúdos Inscritos Gabriel: %s\n", devgabriel.getConteudosInscritos());
+        devgabriel.progredir();
+
+        System.out.println("-");
+
+        System.out.printf("Conteúdos Concluídos Gabriel: %s\n", devgabriel.getConteudosConcluidos());
+        System.out.printf("Conteúdos Inscritos Gabriel: %s\n", devgabriel.getConteudosInscritos());
+
+
     }
 }
